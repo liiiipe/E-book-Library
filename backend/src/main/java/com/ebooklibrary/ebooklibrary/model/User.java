@@ -1,5 +1,7 @@
 package com.ebooklibrary.ebooklibrary.model;
 
+import java.util.Set;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -15,7 +17,8 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    // getters and setters
+    @OneToMany(mappedBy = "user")
+    Set<EBookSaved> savedEBooks;
 
     public Long getId() {
         return id;
@@ -39,5 +42,21 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<EBookSaved> getSavedEBooks() {
+        return savedEBooks;
+    }
+
+    public void setSavedEBooks(Set<EBookSaved> savedEBooks) {
+        this.savedEBooks = savedEBooks;
+    }
+
+    public void saveEBook(EBookSaved eBook) {
+        this.savedEBooks.add(eBook);
+    }
+  
+    public void removeSavedEBook(EBookSaved eBook) {
+        this.savedEBooks.remove(eBook);
     }
 }
