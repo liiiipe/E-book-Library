@@ -41,12 +41,13 @@ aside {
   nav {
     margin-top: 42px;
 
-    li {
+    li a {
       padding: 15px 47px;
       color: #747474;
-      cursor: pointer;
       transition: all 0.3s;
       border-right: 4px solid transparent;
+      text-decoration: none;
+      color: #747474;
       display: flex;
       align-items: center;
       gap: 12px;
