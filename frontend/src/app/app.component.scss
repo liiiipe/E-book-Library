@@ -1,80 +1,161 @@
-aside {
+main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 266px;
-  height: 90vh;
-  align-items: center;
-  padding: 25px 0;
+  background: linear-gradient(90deg, rgba(249, 249, 249, 1) 0%, rgba(249, 249, 249, 1) 50%, rgba(224, 247, 206, 1) 100%);
 
-  h1 {
-    font-size: 26px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  h3 {
-    font-size: 16px;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .user {
+  aside {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 300px; // 266
+    height: 95vh;
     align-items: center;
-    margin-top: 35px;
+    padding: 25px 0;
+    background-color: #FFFFFF;
 
-    img {
-      width: 89px;
-      height: 89px;
-      border-radius: 64px;
+    h1 {
+      font-size: 26px;
     }
-  }
 
-  nav {
-    margin-top: 42px;
+    h2 {
+      font-size: 18px;
+    }
 
-    li a {
-      padding: 15px 47px;
-      color: #747474;
-      transition: all 0.3s;
-      border-right: 4px solid transparent;
-      text-decoration: none;
-      color: #747474;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    h3 {
+      font-size: 16px;
+    }
 
-      &.active-link,
-      &:hover {
-        background-color: rgba($color: #87b464, $alpha: 0.15);
-        border-right: 4px solid #87b464;
-        svg path {
-          fill: #87b464;
-          stroke: #87b464;
+    >div {
+      width: 100%;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+
+      .user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 35px;
+
+        img {
+          width: 89px;
+          height: 89px;
+          border-radius: 64px;
         }
       }
 
-      &:active {
-        background-color: rgba($color: #87b464, $alpha: 0.3);
+      nav {
+        margin-top: 42px;
+
+        li {
+          list-style: none;
+
+          a {
+            padding: 15px 47px;
+            color: #747474;
+            transition: all 0.3s;
+            border-right: 4px solid transparent;
+            text-decoration: none;
+            color: #747474;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            &.active-link,
+            &:hover {
+              background-color: rgba($color: #87b464, $alpha: 0.15);
+              border-right: 4px solid #87b464;
+
+              svg path {
+                fill: #87b464;
+                stroke: #87b464;
+              }
+            }
+
+            &:active {
+              background-color: rgba($color: #87b464, $alpha: 0.3);
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #747474;
+
+      div img {
+        margin-right: -10px;
       }
     }
   }
 
-  .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #747474;
-    div img {
-      margin-right: -10px;
+  .page {
+    flex: 1;
+
+    header {
+      >img {
+        width: 100%;
+      }
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 25px;
+
+        .search {
+          flex: 1;
+          position: relative;
+
+          svg {
+            position: absolute;
+            top: 14px;
+            left: 30px;
+          }
+
+          input {
+            padding: 15px 70px;
+            border-radius: 24px;
+            border: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            width: 95%;
+          }
+        }
+
+        .options {
+          display: flex;
+          gap: 20px;
+
+          button {
+            border-radius: 50%;
+            border: none;
+            background-color: #FFFFFF;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #f0f0f0;
+            }
+
+            &:active {
+              background-color: #ebebeb;
+            }
+          }
+
+          img {
+            margin-right: -10px;
+          }
+        }
+      }
     }
   }
 }
